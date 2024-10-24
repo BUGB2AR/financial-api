@@ -20,11 +20,17 @@ public class FinancialDtoMapper {
     }
 
     public Financial toDomain(FinancialDTO financialDTO) {
-        return new Financial(financialDTO.id(), financialDTO.description(), toItemDomainList(financialDTO.itens()));
+        return new Financial(
+                financialDTO.id(),
+                financialDTO.description(),
+                toItemDomainList(financialDTO.itens()));
     }
 
     public List<Financial> toDomainList(List<FinancialDTO> financialDTOList) {
-        return financialDTOList.stream().map(this::toDomain).collect(Collectors.toList());
+        return financialDTOList.
+                stream().
+                map(this::toDomain).
+                collect(Collectors.toList());
     }
 
     public List<FinancialDTO> toDTOList(List<Financial> financialList) {
@@ -33,14 +39,19 @@ public class FinancialDtoMapper {
 
     public List<FinancialItemDTO> toItemDTOList(List<FinancialItem> items) {
         return items.stream()
-                .map(item -> new FinancialItemDTO(item.getDescription(), item.getTypeFinancial(), item.getSourceDestination()))
+                .map(item -> new FinancialItemDTO(
+                        item.getDescription(),
+                        item.getTypeFinancial(),
+                        item.getSourceDestination()))
                 .collect(Collectors.toList());
     }
 
-
     public List<FinancialItem> toItemDomainList(List<FinancialItemDTO> itemDTOs) {
         return itemDTOs.stream()
-                .map(dto -> new FinancialItem(dto.description(), dto.typeFinancial(), dto.sourceDestination()))
+                .map(dto -> new FinancialItem(
+                        dto.description(),
+                        dto.typeFinancial(),
+                        dto.sourceDestination()))
                 .collect(Collectors.toList());
     }
 }

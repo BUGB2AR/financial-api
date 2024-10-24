@@ -2,7 +2,6 @@ package com.financial.api.core.usecases;
 
 import com.financial.api.core.entities.Financial;
 import com.financial.api.core.gateways.FinancialGateway;
-
 import java.util.List;
 
 public class FindNameContainingIgnoreUseCaseImpl implements FindBynameContainingUseCase {

@@ -4,7 +4,6 @@ import com.financial.api.core.enums.TypeFinancial;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Embeddable
