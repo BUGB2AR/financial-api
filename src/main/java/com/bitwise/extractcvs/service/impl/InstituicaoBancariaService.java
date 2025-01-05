@@ -1,4 +1,4 @@
-package com.bitwise.extractcvs.service;
+package com.bitwise.extractcvs.service.impl;
 
 import com.bitwise.extractcvs.enums.InstituicaoBancaria;
 import org.springframework.stereotype.Component;
